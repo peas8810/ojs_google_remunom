@@ -1,0 +1,82 @@
+name: Update Scholar JSON (manual)
+
+on:
+  workflow_dispatch:
+    inputs:
+      profile_name:
+        description: "Nome do perfil (ex: REMUNOM - Google Scholar)"
+        required: true
+        default: "REMUNOM (Google Scholar)"
+      source:
+        description: "Link do Google Scholar"
+        required: true
+        default: "https://scholar.google.com/citations?hl=pt-BR&user=jgE3_sQAAAAJ&view_op=list_works"
+      citations_all:
+        description: "Citações (All)"
+        required: true
+        default: "1276"
+      citations_5y:
+        description: "Citações (5y) (opcional)"
+        required: false
+        default: "0"
+      h_index_all:
+        description: "h-index (All)"
+        required: true
+        default: "11"
+      h_index_5y:
+        description: "h-index (5y) (opcional)"
+        required: false
+        default: "0"
+      i10_index_all:
+        description: "i10-index (All)"
+        required: true
+        default: "15"
+      i10_index_5y:
+        description: "i10-index (5y) (opcional)"
+        required: false
+        default: "0"
+      citations_by_year:
+        description: "Citações por ano (um por linha: 2020=40)"
+        required: true
+        default: |
+          2020=40
+          2021=85
+          2022=160
+          2023=230
+          2024=320
+          2025=441
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Run updater (manual inputs)
+        env:
+          PROFILE_NAME: ${{ inputs.profile_name }}
+          SOURCE: ${{ inputs.source }}
+          CITATIONS_ALL: ${{ inputs.citations_all }}
+          CITATIONS_5Y: ${{ inputs.citations_5y }}
+          H_INDEX_ALL: ${{ inputs.h_index_all }}
+          H_INDEX_5Y: ${{ inputs.h_index_5y }}
+          I10_INDEX_ALL: ${{ inputs.i10_index_all }}
+          I10_INDEX_5Y: ${{ inputs.i10_index_5y }}
+          CITATIONS_BY_YEAR: ${{ inputs.citations_by_year }}
+        run: |
+          python scripts/update_scholar_manual.py
+
+      - name: Commit changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add remunom-scholar.json
+          git diff --cached --quiet || git commit -m "manual: update Scholar metrics"
+          git push
