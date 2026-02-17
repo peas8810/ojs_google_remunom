@@ -3,12 +3,21 @@
   "profile_name": "REMUNOM (Google Scholar)",
   "updated_at": "2026-02-17",
   "metrics": {
-    "citations_all": 1276,
-    "citations_5y": 0,
-    "h_index_all": 11,
-    "h_index_5y": 0,
-    "i10_index_all": 15,
-    "i10_index_5y": 0
+    "citations_all": 2127,
+    "citations_5y": 2048,
+    "h_index_all": 18,
+    "h_index_5y": 17,
+    "i10_index_all": 41,
+    "i10_index_5y": 38
   },
-  "citations_by_year": []
+  "citations_by_year": [
+    { "year": "2019", "value": 5 },
+    { "year": "2020", "value": 3 },
+    { "year": "2021", "value": 25 },
+    { "year": "2022", "value": 60 },
+    { "year": "2023", "value": 180 },
+    { "year": "2024", "value": 420 },
+    { "year": "2025", "value": 1250 },
+    { "year": "2026", "value": 110 }
+  ]
 }
