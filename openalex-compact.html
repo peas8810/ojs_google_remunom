@@ -1,11 +1,11 @@
 <!doctype html>
-<html lang="pt-BR">
+<html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1"></script>
 
-  <!-- “Nature-ish”: serif editorial + sans neutra -->
+  <!-- Editorial feel: serif headline + neutral sans -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700;800&family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&display=swap" rel="stylesheet">
@@ -18,10 +18,10 @@
       --muted2:#9ca3af;
       --line:#e5e7eb;
       --line2:#f3f4f6;
-      --accent:#d10a1f;       /* vermelho editorial */
+      --accent:#d10a1f;     /* editorial red */
       --accent2:#7f0a14;
       --shadow: 0 1px 0 rgba(17,24,39,.04), 0 10px 22px rgba(17,24,39,.07);
-      --radius: 16px;
+      --radius:16px;
     }
 
     body{
@@ -39,7 +39,7 @@
       overflow:hidden;
     }
 
-    /* cabeçalho com “faixa” editorial */
+    /* Header with editorial stripe */
     .hd{
       padding:12px 12px 10px;
       border-bottom:1px solid var(--line2);
@@ -237,7 +237,7 @@
       <div class="hd-inner">
         <div class="kicker"><span class="dot"></span> OpenAlex Metrics</div>
         <div class="title">REMUNOM</div>
-        <p class="sub" id="range">Distribuição anual</p>
+        <p class="sub" id="range">Annual distribution</p>
       </div>
     </div>
 
@@ -250,33 +250,33 @@
           <div class="v" id="total">—</div>
         </div>
         <div class="stat">
-          <div class="k"><span class="bar"></span>Campeão</div>
+          <div class="k"><span class="bar"></span>Top year</div>
           <div class="v" id="champ">—</div>
         </div>
         <div class="stat">
-          <div class="k"><span class="bar"></span>Último</div>
+          <div class="k"><span class="bar"></span>Latest</div>
           <div class="v" id="last">—</div>
         </div>
       </div>
 
       <div class="rank">
         <div class="rankT">
-          <span>Top 3 anos</span>
-          <span class="chip">impacto anual</span>
+          <span>Top 3 years</span>
+          <span class="chip">annual output</span>
         </div>
         <div id="rank"></div>
       </div>
 
       <div class="foot">
-        <div>Fonte: OpenAlex</div>
-        <div><a id="jsonlink" href="#" target="_blank" rel="noopener">UJN</a></div>
+        <div>Source: OpenAlex</div>
+        <div><a id="jsonlink" href="#" target="_blank" rel="noopener">View JSON</a></div>
       </div>
     </div>
   </div>
 
 <script>
 (async function(){
-  // ✅ CORRIGIDO: repo real do print
+  // ✅ Correct repo (from your screenshot)
   const RAW = "https://raw.githubusercontent.com/peas8810/ojs_google_remunom/main/openalex.json";
 
   const $ = (id)=>document.getElementById(id);
@@ -298,7 +298,7 @@
   const years = rows.map(r=>r.year);
   const counts = rows.map(r=>r.count);
 
-  $("range").textContent = `Distribuição anual • ${years[0]}–${years[years.length-1]}`;
+  $("range").textContent = `Annual distribution • ${years[0]}–${years[years.length-1]}`;
 
   const champ = rows.reduce((p,c)=> c.count > p.count ? c : p, rows[0]);
   $("champ").innerHTML = `${champ.year} <small>(${champ.count})</small>`;
@@ -326,7 +326,7 @@
         tooltip: {
           enabled:true,
           callbacks: {
-            title: (items)=> `Ano ${items?.[0]?.label ?? ""}`,
+            title: (items)=> `Year ${items?.[0]?.label ?? ""}`,
             label: (item)=> `Total: ${item?.raw ?? ""}`
           }
         }
@@ -345,7 +345,7 @@
   });
 
   const top3 = [...rows].sort((a,b)=> b.count - a.count).slice(0,3);
-  const medals = ["1°","2°","3°"];
+  const medals = ["🥇","🥈","🥉"];
   const rankEl = $("rank");
   rankEl.innerHTML = "";
   top3.forEach((r, i) => {
