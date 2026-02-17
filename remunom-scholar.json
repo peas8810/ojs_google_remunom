@@ -4,11 +4,11 @@
   "updated_at": "2026-02-17",
   "metrics": {
     "citations_all": 1276,
-    "citations_5y": 2085,
-    "h_index_all": 18,
-    "h_index_5y": 17,
-    "i10_index_all": 35,
-    "i10_index_5y": 40
+    "citations_5y": 0,
+    "h_index_all": 11,
+    "h_index_5y": 0,
+    "i10_index_all": 15,
+    "i10_index_5y": 0
   },
   "citations_by_year": []
 }
