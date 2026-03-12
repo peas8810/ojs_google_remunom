@@ -1,5 +1,5 @@
 {
-  "meta": { "count": 2654, "db_response_time_ms": 4, "page": 1, "per_page": 200, "groups_count": 8 },
+  "meta": { "count": 2896, "db_response_time_ms": 4, "page": 1, "per_page": 200, "groups_count": 8 },
   "group_by": [
     { "key": "2025", "key_display_name": "2025", "count": 1284 },
     { "key": "2024", "key_display_name": "2024", "count": 721 },
@@ -8,6 +8,6 @@
     { "key": "2018", "key_display_name": "2018", "count": 63 },
     { "key": "2021", "key_display_name": "2021", "count": 61 },
     { "key": "2019", "key_display_name": "2019", "count": 60 },
-    { "key": "2020", "key_display_name": "2026", "count": 57 }
+    { "key": "2020", "key_display_name": "2026", "count": 299 }
   ]
 }
