@@ -45,6 +45,7 @@ on:
           2023=230
           2024=320
           2025=441
+          2026=197
 
 permissions:
   contents: write
