@@ -1,1 +1,42 @@
-
+{
+  "titulo_widget": "TOP 5 ARTIGOS",
+  "subtitulo": "PlumX Metrics",
+  "data_atualizacao": "Julho 2026",
+  "artigos": [
+    {
+      "rank": 1,
+      "titulo": "SCIENTIFIC PRODUCTION ON THE UNIVERSALIZATION OF BASIC SANITATION IN THE CONTEXT OF SUSTAINABLE DEVELOPMENT GOAL 6 (SDG 6): A WORLDWIDE BIBLIOMETRIC ANALYSIS OF THE LITERATURE INDEXED IN THE WEB OF SCIENCE (2015–2026)",
+      "url_artigo": "https://remunom.ojsbr.com/multidisciplinar/article/view/7127",
+      "doi": "10.66104/a07ck745",
+      "url_plumx": "https://plu.mx/plum/a/?doi=10.66104/a07ck745"
+    },
+    {
+      "rank": 2,
+      "titulo": "Título do Artigo 2",
+      "url_artigo": "#",
+      "doi": "10.61164/xq4dqy35",
+      "url_plumx": "https://plu.mx/plum/a/?doi=10.61164/xq4dqy35"
+    },
+    {
+      "rank": 3,
+      "titulo": "Título do Artigo 3",
+      "url_artigo": "#",
+      "doi": "10.61164/trsscq72",
+      "url_plumx": "https://plu.mx/plum/a/?doi=10.61164/trsscq72"
+    },
+    {
+      "rank": 4,
+      "titulo": "Título do Artigo 4",
+      "url_artigo": "#",
+      "doi": "10.61164/cbk44936",
+      "url_plumx": "https://plu.mx/plum/a/?doi=10.61164/cbk44936"
+    },
+    {
+      "rank": 5,
+      "titulo": "Título do Artigo 5",
+      "url_artigo": "#",
+      "doi": "10.61164/rmnm.v1i1.3481",
+      "url_plumx": "https://plu.mx/plum/a/?doi=10.61164/rmnm.v1i1.3481"
+    }
+  ]
+}
